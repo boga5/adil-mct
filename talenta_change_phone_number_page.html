@@ -6,6 +6,13 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#5bbad5">
+
   <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
   <style id="common">
     @font-face {
@@ -181,9 +188,8 @@
     }
 
     img[data-tenant-branding-background=true] {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      width: max(177.777vh,100%);
+      height: max(100vh,56.25vw);
       z-index: 0;
       position: fixed;
       left: 0;
@@ -210,17 +216,29 @@
       margin: 0 auto
     }
 
+    .heading {
+      margin-top: 10px;
+    }
+
     .heading h1 {
-      margin-bottom: 20px
+      color: #000000;
+      margin: 0;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+      letter-spacing: 0em;
     }
 
     .col-lg-6 {
-      max-width: 470px;
       width: 100%;
+      max-width: 962px;
       float: none;
       display: inline-block;
-      vertical-align: top;
-      padding: 0
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
     }
 
     .row {
@@ -317,19 +335,20 @@
 
     .buttons button {
       margin: 0 auto;
-      width: 60%;
+      width: 100%;
       height: 50px;
-      background-color: #420b2f;
-      border-radius: .5rem;
+      background-color: #FA4E50;
+      border-radius: 10px;
       border: none;
-      color: #fff;
-      font-size: 1em;
-      margin-top: 10px
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 21px;
+      letter-spacing: 0em;
+      color: #FFFFFFE5;
     }
 
     .buttons button:hover {
-      background-color: #ab3b78;
-      border-color: #204d74
+      background-color: #fa5f61;
     }
 
     .buttons button[aria-disabled=true] {
@@ -367,6 +386,11 @@
       display: inline-block
     }
 
+    #attributeList {
+      margin-top: 34px;
+      margin-bottom: 34px;
+    }
+
     #attributeList ul {
       padding: 0
     }
@@ -397,46 +421,34 @@
       font-weight: 600
     }
 
+    #attributeList ul li {
+      margin: 0;
+    }
+
     #attributeList ul li label {
       display: block;
       text-align: left;
       float: none
     }
 
-    #attributeList ul li.EmailBox label,
-    #attributeList ul li.Password label,
-    #attributeList ul li.TextBox label {
-      display: none !important
-    }
-
-    #attributeList ul li label[for=country] {
+    #attributeList ul li label {
       float: left;
-      display: inline-block !important;
-      margin-bottom: .5rem
+      margin: 10px 0;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 19px;
+      letter-spacing: 0em;
     }
 
-    #attributeList ul li label[for=cpiminternal_legalCountry] {
-      float: none;
-      display: block !important;
-      text-align: left;
-      margin-bottom: .5rem
-    }
-
-    #attributeList ul li label[for=cpiminternal_dateOfBirth] {
-      float: none;
-      text-align: left;
-      display: block !important;
-      margin-bottom: .5rem
-    }
-
-    #attributeList ul li input {
-      height: 50px;
-      width: 70%;
-      border-radius: .5rem;
-      text-indent: 20px;
-      background-color: #efefef !important;
+    #attributeList ul li input,
+    #attributeList ul li select {
+      height: 49px;
+      border-radius: 10px;
+      width: 100%;
+      text-indent: 14px;
       background-image: none !important;
-      color: #555
+      color: #000000B2;
+      border: 1px solid #00000066;
     }
 
     #attributeList ul li input::-webkit-input-placeholder {
@@ -602,13 +614,6 @@
       -webkit-appearance: none
     }
 
-    #attributeList ul li .attrEntry .dropdown_single {
-      height: 45px;
-      border-radius: .5rem;
-      width: 100%;
-      padding-left: 15px
-    }
-
     #attributeList ul li .attrEntry div#cpiminternal_dateOfBirth.date {
       display: table;
       width: 100%
@@ -639,8 +644,8 @@
       display: none
     }
 
-    #attributeVerification .buttons {
-      margin-top: 30px
+    #attributeVerification {
+        margin: 0;
     }
 
     @media screen and (max-width:100%) {
@@ -763,7 +768,6 @@
       }
     }
 
-    .panel,
     .panel_layout,
     .panel_layout_row,
     body,
@@ -788,13 +792,6 @@
     }
 
     @media only screen and (max-width:350px) {
-
-      button,
-      input,
-      select {
-        width: 95% !important
-      }
-
       #attributeList ul li .attrEntry div#cpiminternal_dateOfBirth select#cpiminternal_dateOfBirth_day.day {
         margin-right: 0
       }
@@ -813,18 +810,16 @@
 
 
   <style>
-    /* Following are generated styles via gulp. */
-    /* inject: css */
     .self_asserted_container .row .panel-default {
-      padding: 40px 30px;
+      padding: 28px;
       margin: auto;
-      height: 100%;
-      background-color: #efefef
+      background-color: #FFFFFF;
+      border-radius: 12px;
+      max-width: 421px;
     }
 
     .self_asserted_container .row .panel-default .panel-body {
       margin: 0 auto;
-      max-width: 380px;
       width: auto;
       padding: 0
     }
@@ -832,8 +827,8 @@
     .self_asserted_container .row .panel-default .panel-body img.companyLogo {
       display: block;
       margin: auto;
-      width: auto;
-      height: 150px
+      width: 150px;
+      height: 44px;
     }
 
     .self_asserted_container .row .panel-default .panel-body .branding h1 {
@@ -1045,10 +1040,6 @@
       margin-bottom: 5px
     }
 
-    #attributeList ul li .attrEntry select:hover {
-      border-color: #888
-    }
-
     #attributeList ul li .attrEntry select option {
       font-weight: 400
     }
@@ -1099,25 +1090,15 @@
       outline: 3px solid #000
     }
 
-    span.required {
-      position: absolute;
-      right: 6%;
-      font-size: 1.4em;
-      color: red;
-      margin-top: .5em
-    }
-
-    li.DateTimeDropdown span.required {
-      margin-top: -2em
-    }
-
     @media screen and (max-width:320px) {
       .self_asserted_container .row .panel-default {
-        padding: 20px 15px
+        padding: 20px;
       }
+    }
 
-      span.required {
-        right: 4%
+    @media (orientation: portrait) {
+      #background_branding_container {
+        flex-direction: column;
       }
     }
 
@@ -1136,10 +1117,10 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <img class="companyLogo" data-tenant-branding-logo="true"
-              src="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/talenta_icons/Talenta AI Favicon 1024px.png" alt="Talenta Logo">
+              src="./images/logo-purple.png" alt="Talenta Banner Logo">
             <div id="api" data-name="SelfAsserted" role="main">
               <div class="heading">
-                <h1 role="heading">User Details</h1>
+                <h1 role="heading">User Detail</h1>
               </div>
               <div class="buttons">
               </div>
@@ -1390,15 +1371,15 @@
                           <option value="YE">Yemen(+967)</option>
                           <option value="ZM">Zambia(+260)</option>
                           <option value="ZW">Zimbabwe(+263)</option>
-                        </select><span class="required">*</span><a class="helpLink tiny" href="javascript:void(0)"
+                        </select><a class="helpLink tiny" href="javascript:void(0)"
                           data-help="Enter Country">What is this?</a>
                       </div>
                     </li>
                     <li class="TextBox oldNationalNumber_li">
-                      <div class="attrEntry">
+                      <div class="attrEntry"><label id="oldNationalNumber_label" for="countryCode">Old Phone Number</label>
                         <div class="error itemLevel" role="alert"></div><input id="oldNationalNumber" class="textInput"
                           type="text" placeholder="Old Phone Number" aria-label="Old Phone Number"
-                          title="Enter National Phone Number" aria-required="true"><span class="required">*</span><a
+                          title="Enter National Phone Number" aria-required="true"><a
                           class="helpLink tiny" href="javascript:void(0)" data-help="Enter National Phone Number">What
                           is this?</a>
                       </div>
