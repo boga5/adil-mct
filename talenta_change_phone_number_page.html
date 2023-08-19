@@ -354,7 +354,7 @@
     }
 
     .buttons button:hover {
-      background-color: #fa5f61;
+      background-color: #af3738;
     }
 
     .buttons button[aria-disabled=true] {
@@ -393,7 +393,7 @@
     }
 
     #attributeList {
-      margin-top: 34px;
+      margin-top: 24px;
       margin-bottom: 34px;
     }
 
@@ -455,6 +455,13 @@
       background-image: none !important;
       color: #000000B2;
       border: 1px solid #00000066;
+    }
+
+    #attributeList ul li input:hover,
+    #attributeList ul li input:hover::placeholder,
+    #attributeList ul li select:hover {
+      color: rgba(250, 78, 80, 0.4);
+      border-color: rgba(250, 78, 80, 0.4);
     }
 
     #attributeList ul li input::-webkit-input-placeholder {
@@ -834,7 +841,7 @@
       display: block;
       margin: auto;
       width: 150px;
-      height: 44px;
+      height: auto;
     }
 
     .self_asserted_container .row .panel-default .panel-body .branding h1 {
