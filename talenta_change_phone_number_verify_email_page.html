@@ -279,7 +279,7 @@
         background-position-x: 95%;
         background-position-y: 50%;
         background-repeat: no-repeat;
-        border-radius: 0.5rem;
+        border-radius: 10px;
         width: 100%;
         width: 100%;
         font-size: 1em;
@@ -456,12 +456,12 @@
         background-image: none !important;
       }
 
-      #attributeList ul li input:hover,
+      #attributeList ul li input:hover:not([readonly="readonly"]),
       #attributeList ul li select:hover {
         border-color: #fdb8b9;
       }
 
-      #attributeList ul li input:hover::placeholder,
+      #attributeList ul li input:hover:not([readonly="readonly"])::placeholder,
       #attributeList ul li select:hover {
         color: #fc8485;
       }
@@ -486,19 +486,18 @@
       }
 
       #attributeList ul li .attrEntry .verificationControlContent .buttons {
-        margin-top: 2rem;
-        padding-bottom: 10px;
+        margin-top: 34px;
         position: relative;
       }
 
       #attributeList ul li .attrEntry .verificationControlContent .sendCode,
       #attributeList ul li .attrEntry .verify .sendButton[id$="ver_but_send"] {
-        width: 60%;
+        width: 100%;
         min-height: 50px;
         height: auto;
-        background-color: #296ec6;
-        color: #efefef;
-        border-radius: 0.5rem;
+        background-color: #420b2f;
+        color: #FFFFFFE5;
+        border-radius: 10px;
       }
 
       #attributeList
@@ -513,7 +512,7 @@
         .attrEntry
         .verify
         .sendButton[id$="ver_but_send"]:hover {
-        background-color: #1662c7;
+        background-color: #2e0821;
       }
 
       @media screen and (-ms-high-contrast: active) {
@@ -540,7 +539,7 @@
         background-color: #296ec6;
         color: #fff;
         margin-right: 5px;
-        border-radius: 0.5rem;
+        border-radius: 10px;
       }
 
       #attributeList ul li .attrEntry .verificationControlContent .verifyCode {
@@ -550,7 +549,7 @@
         background-color: #296ec6;
         color: #fff;
         margin-right: 5px;
-        border-radius: 0.5rem;
+        border-radius: 10px;
       }
 
       #attributeList ul li .attrEntry .verify .verifyButton:hover {
@@ -581,7 +580,7 @@
         bottom: -38px;
         background-color: #296ec6;
         color: #fff;
-        border-radius: 0.5rem;
+        border-radius: 10px;
       }
 
       #attributeList ul li .attrEntry .verificationControlContent .sendNewCode {
@@ -594,7 +593,7 @@
         bottom: -38px;
         background-color: #296ec6;
         color: #fff;
-        border-radius: 0.5rem;
+        border-radius: 10px;
       }
 
       #attributeList
@@ -621,7 +620,7 @@
         background-color: #296ec6;
         width: 60%;
         height: 50px;
-        border-radius: 0.5rem;
+        border-radius: 10px;
       }
 
       #attributeList
@@ -635,7 +634,7 @@
         background-color: #296ec6;
         width: 60%;
         height: 50px;
-        border-radius: 0.5rem;
+        border-radius: 10px;
       }
 
       #attributeList ul li .attrEntry .verify .editButton:hover {
@@ -679,7 +678,7 @@
       }
 
       #attributeList ul li .attrEntry div#cpiminternal_dateOfBirth.date select {
-        border-radius: 0.5rem;
+        border-radius: 10px;
         display: inline-block;
         height: 50px;
         padding-left: 15px;
@@ -746,7 +745,7 @@
         #attributeVerification #attributeList ul li input {
           width: 60%;
           height: 40px;
-          border-radius: 0.5rem;
+          border-radius: 10px;
           border: 1px solid #999999;
           text-indent: 10px;
         }
@@ -834,7 +833,7 @@
           border: none;
           color: #fff;
           background-color: #496ad8;
-          border-radius: 0.5rem;
+          border-radius: 10px;
           font-size: 1em;
           box-shadow: 0 0 40px 2px #dae1f7;
           width: 30%;
@@ -949,9 +948,12 @@
       }
 
       .self_asserted_container .row .panel-default .panel-body .intro {
-        display: none;
-        text-align: left;
-        margin-top: 2rem;
+        margin-top: 34px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: center;
       }
 
       .self_asserted_container
