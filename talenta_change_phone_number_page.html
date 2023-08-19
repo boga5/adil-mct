@@ -179,11 +179,11 @@
 
     input,
     select {
-      border: 1px solid #605e5c
+      border: 1px solid #999999;
     }
 
     input::placeholder {
-      color: #6a6a6a;
+      color: #4d4d4d;
       opacity: 1
     }
 
@@ -453,15 +453,20 @@
       width: 100%;
       text-indent: 14px;
       background-image: none !important;
-      color: #000000B2;
-      border: 1px solid #00000066;
     }
 
     #attributeList ul li input:hover,
+    #attributeList ul li select:hover {
+      border-color: #fdb8b9;
+    }
+
     #attributeList ul li input:hover::placeholder,
     #attributeList ul li select:hover {
-      color: rgba(250, 78, 80, 0.4);
-      border-color: rgba(250, 78, 80, 0.4);
+      color: #fc8485;
+    }
+
+    #attributeList ul li select:hover option {
+      color: #4d4d4d;
     }
 
     #attributeList ul li input::-webkit-input-placeholder {
@@ -686,7 +691,7 @@
         width: 60%;
         height: 40px;
         border-radius: .5rem;
-        border: 1px solid #605e5c;
+        border: 1px solid #999999;
         text-indent: 10px
       }
 
@@ -989,7 +994,7 @@
       z-index: 1;
       width: 24px;
       height: 24px;
-      border: 1px solid #605e5c;
+      border: 1px solid #999999;
       border-radius: 2px
     }
 
@@ -1389,7 +1394,7 @@
                       </div>
                     </li>
                     <li class="TextBox oldNationalNumber_li">
-                      <div class="attrEntry"><label id="oldNationalNumber_label" for="countryCode">Old Phone Number</label>
+                      <div class="attrEntry"><label id="oldNationalNumber_label" for="oldNationalNumber">Old Phone Number</label>
                         <div class="error itemLevel" role="alert"></div><input id="oldNationalNumber" class="textInput"
                           type="text" placeholder="Old Phone Number" aria-label="Old Phone Number"
                           title="Enter National Phone Number" aria-required="true"><a
