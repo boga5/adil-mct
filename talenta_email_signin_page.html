@@ -36,11 +36,7 @@
       }
 
       #FacebookExchange {
-        background-image: url(https://bijibijiauthb2c.b2clogin.com/static/tenant/templates/idp_logos/colored/facebook.svg);
-      }
-
-      #FacebookExchange:hover {
-        background-image: url(https://bijibijiauthb2c.b2clogin.com/static/tenant/templates/idp_logos/white/facebook.svg);
+        background-image: url(./images/facebook-icon.svg);
       }
 
       #GitHubExchange {
@@ -63,10 +59,6 @@
 
       #GoogleExchange {
         background-image: url(https://bijibijiauthb2c.b2clogin.com/static/tenant/templates/idp_logos/colored/google.svg);
-      }
-
-      #GoogleExchange:hover {
-        background-image: url(https://bijibijiauthb2c.b2clogin.com/static/tenant/templates/idp_logos/white/google.svg);
       }
 
       #LinkedInExchange {
@@ -117,9 +109,6 @@
         background-image: url(https://bijibijiauthb2c.b2clogin.com/static/tenant/templates/idp_logos/white/weibo.svg);
       }
 
-      .buttons #cancel:before {
-        content: url(https://bijibijiauthb2c.b2clogin.com/static/tenant/templates/images/left-arrow.svg);
-      }
     </style>
     <style id="idpselector">
       #SignInWithLogonNameExchange,
@@ -299,10 +288,6 @@
         background-color: #36474f !important;
       }
 
-      #FacebookExchange:hover {
-        background-color: #3b5595 !important;
-      }
-
       #GitHubExchange:hover {
         background-color: #0f0f0f !important;
       }
@@ -310,10 +295,6 @@
       #AppleExchange:hover,
       #AppleManagedExchange:hover {
         background-color: #0f0f0f !important;
-      }
-
-      #GoogleExchange:hover {
-        background-color: #c64a29 !important;
       }
 
       #LinkedInExchange:hover {
@@ -364,33 +345,6 @@
 
       .buttons button:not([aria-disabled="true"]) {
         opacity: 1;
-      }
-
-      .buttons #cancel {
-        padding: 0;
-        margin-left: auto;
-        background: 0 0;
-        border: 0;
-        width: inherit;
-        position: absolute;
-        background-color: transparent;
-        top: 2px;
-        left: 15px;
-        font-size: 1em;
-        color: #505050;
-        box-shadow: none;
-        text-align: left;
-      }
-
-      .buttons #cancel:hover {
-        color: #000 !important;
-      }
-
-      .buttons #cancel:before {
-        padding: 10px;
-        vertical-align: sub;
-        zoom: 90%;
-        display: inline-block;
       }
 
       #attributeList {
@@ -856,11 +810,6 @@
         #attributeVerification .buttons #continue {
           height: 40px;
         }
-
-        #attributeVerification .buttons #cancel {
-          font-size: 1em;
-          left: 40%;
-        }
       }
 
       .panel_layout,
@@ -1247,6 +1196,61 @@
 
       /* endinject */
     </style>
+
+    <style>
+        .claims-provider-list-buttons {
+            margin: 34px 0;
+        }
+
+        .accountButton {
+            width: 100%;
+            height: 52px;
+            padding: 14px;
+            color: #777777;
+            border: 1px solid #999999;
+            border-radius: 10px;
+            margin-top: 10px;
+            background-size: 24px 24px;
+            background-position-x: 14px;
+            background-position-y: 14px;
+            background-repeat: no-repeat;
+            background-color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 21px;
+            letter-spacing: 0em;
+        }
+
+        #GoogleExchange:hover {
+            background-color: #F8F9FB;
+            border-color: #F8F9FB;
+        }
+
+        .accountButton .firstButton {
+            margin-top: 0;
+        }
+
+        #MicrosoftWorkorSchool {
+            background-image: url(https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/idp_logos/colored/microsoft.svg);
+        }
+
+        #MicrosoftWorkorSchool:hover {
+            background-color: #0067B8;
+            border-color: #0067B8;
+            color: #FFFFFF;
+        }
+
+        #FacebookExchange {
+            background-color: #1877F2;
+            color: #FFFFFF;
+        }
+
+        #FacebookExchange:hover {
+            background-color: #1154aa;
+            border-color: #1154aa;
+            color: #FFFFFF;
+        }
+    </style>
   </head>
 
   <body>
@@ -1268,20 +1272,28 @@
               <img
                 class="companyLogo"
                 data-tenant-branding-logo="true"
-                src="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/talenta_icons/Talenta AI Favicon 1024px.png"
+                src="./images/logo-purple.png"
                 alt="Talenta Logo"
               />
               <div id="api" data-name="SelfAsserted" role="main">
                 <div class="heading">
-                  <h1 role="heading">User Details</h1>
+                  <h1 role="heading">Sign in</h1>
                 </div>
-                <div class="buttons">
-                  <button id="cancel" aria-label="Cancel" formnovalidate="">
-                    Cancel
-                  </button>
-                </div>
-                <div class="intro">
-                  <p>Please provide the following details.</p>
+                <div class="claims-provider-list-buttons social" aria-label="Sign in with your social account" role="form">
+                    <div class="options">
+                        <div>
+                            <button class="accountButton firstButton claims-provider-selection" id="GoogleExchange" role="link">Sign in with
+                                Google</button>
+                        </div>
+                        <div>
+                            <button class="accountButton claims-provider-selection" id="MicrosoftWorkorSchool"
+                                role="link">Sign in with Microsoft</button>
+                        </div>
+                        <div>
+                            <button class="accountButton claims-provider-selection" id="FacebookExchange" role="link">Sign in
+                                with Facebook</button>
+                        </div>
+                    </div>
                 </div>
                 <form id="attributeVerification">
                   <div
