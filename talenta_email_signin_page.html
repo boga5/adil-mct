@@ -349,7 +349,7 @@
 
       #attributeList {
         margin-top: 24px;
-        margin-bottom: 34px;
+        margin-bottom: 26px;
       }
 
       #attributeList ul {
@@ -1250,6 +1250,62 @@
             border-color: #1154aa;
             color: #FFFFFF;
         }
+
+        .separator {
+            height: 1px;
+            background-color: #CCCCCC;
+        }
+
+        #remember_me_label {
+            font-family: Manrope, SegoeUI;
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 20px;
+            letter-spacing: 0em;
+            color: #000C14;
+        }
+
+        #remember_me:hover {
+            cursor: pointer;
+        }
+
+        .forgot-password,
+        .forgot-password:link,
+        .forgot-password:visited {
+            font-family: Segoe UI;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 20px;
+            letter-spacing: 0em;
+            color: #FA4E50;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            cursor: pointer;
+            color: #FA4E50;
+            text-decoration: underline;
+        }
+
+        .claims-provider-list-text-links {
+            color: #555555;
+            margin-top: 34px;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 20px;
+            letter-spacing: 0em;
+        }
+
+        .claims-provider-list-text-links p {
+            margin: 10px 0;
+        }
+
+        .claims-provider-list-text-links a,
+        .claims-provider-list-text-links a:visited,
+        .claims-provider-list-text-links a:link {
+            color: #AB3B78;
+        }
+
     </style>
   </head>
 
@@ -1295,6 +1351,7 @@
                         </div>
                     </div>
                 </div>
+                <div class="separator"></div>
                 <form id="attributeVerification">
                   <div
                     id="requiredFieldMissing"
@@ -1333,6 +1390,7 @@
                       <li class="EmailBox email_li">
                         <div class="attrEntry">
                           <div class="error itemLevel" role="alert"></div>
+                          <label id="email_label" for="email">Sign in with your email address</label>
                           <input
                             id="email"
                             class="textInput"
@@ -1353,6 +1411,7 @@
                       <li class="Password password_li">
                         <div class="attrEntry">
                           <div class="error itemLevel" role="alert"></div>
+                          <label id="password_label" for="password">Password</label>
                           <input
                             id="password"
                             class="textInput"
@@ -1362,8 +1421,7 @@
                             title="Enter password"
                             autocomplete="new-password"
                             aria-required="true"
-                          /><span class="required">*</span
-                          ><a
+                          /><a
                             class="helpLink tiny"
                             href="javascript:void(0)"
                             data-help="Enter password"
@@ -1372,12 +1430,19 @@
                         </div>
                       </li>
                     </ul>
+                    <div style="display: flex;justify-content: space-between;">
+                        <div>
+                            <input id="remember_me" type="checkbox">
+                            <label id="remember_me_label" for="remember_me">Remember Me</label>
+                        </div>
+                        <a
+                          id="skipValidationProfile"
+                          class="forgot-password"
+                          aria-label="Forgot your password?"
+                          >Forgot your password?</a
+                        >
+                    </div>
                   </div>
-                  <a
-                    id="skipValidationProfile"
-                    aria-label="Forgot your password?"
-                    >Forgot your password?</a
-                  >
                   <div class="buttons">
                     <button
                       id="continue"
@@ -1386,7 +1451,7 @@
                       aria-disabled="false"
                       aria-label="Continue"
                     >
-                      Continue
+                      Login
                     </button>
                   </div>
 
@@ -1396,6 +1461,19 @@
                     aria-labelledby="verifying_blurb"
                   >
                     <div id="verifying_blurb"></div>
+                  </div>
+                  <div class="claims-provider-list-text-links">
+                    <p>
+                      Don't have an account?
+                    </p>
+                    <p>Sign up with <a class="text-link" id="SignUpWithLogonPhoneExchange"
+                        href="/bijibijiauthb2c.onmicrosoft.com/B2C_1_Talenta_Userflow/api/CombinedSigninAndSignup/unified?claimsexchange=SignUpWithLogonPhoneExchange&amp;csrf_token=RlF3d1cvNzRIbi9tMnNvSnFVclE4NS9DaVo0Zm1vR3hUKzN1Y3doUC9iZUtrcUMrMGJDb25FUmRyZEhKNlZnNjlvT2xTRXlDTXBNN2dxMUl4SC9Ta0E9PTsyMDIzLTA3LTI3VDA3OjI5OjE0LjYzMDM5OTZaO1llNTd5MG40Wm1yU0M4MXNQTzlnUmc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJhYzk4NGI5ZS1jNGY5LTQ5ZWMtYTdmMi00NmQzYzZhNDE2MzQifQ&amp;p=B2C_1_Talenta_Userflow"
+                        >Phone Number</a>
+                        or
+                        <a class="text-link" id="SignUpWithLogonEmailExchange"
+                        href="/bijibijiauthb2c.onmicrosoft.com/B2C_1_Talenta_Userflow/api/CombinedSigninAndSignup/unified?claimsexchange=SignUpWithLogonEmailExchange&amp;csrf_token=RlF3d1cvNzRIbi9tMnNvSnFVclE4NS9DaVo0Zm1vR3hUKzN1Y3doUC9iZUtrcUMrMGJDb25FUmRyZEhKNlZnNjlvT2xTRXlDTXBNN2dxMUl4SC9Ta0E9PTsyMDIzLTA3LTI3VDA3OjI5OjE0LjYzMDM5OTZaO1llNTd5MG40Wm1yU0M4MXNQTzlnUmc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJhYzk4NGI5ZS1jNGY5LTQ5ZWMtYTdmMi00NmQzYzZhNDE2MzQifQ&amp;p=B2C_1_Talenta_Userflow"
+                        >Email</a>
+                    </p>
                   </div>
                 </form>
               </div>
