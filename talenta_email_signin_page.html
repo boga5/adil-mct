@@ -1050,6 +1050,48 @@
     .password-toggle-hide {
       background-image: url(https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/hide-password.svg);
     }
+
+    #remember_me_label {
+      display: block;
+      position: relative;
+      padding-left: 27px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    #remember_me_label input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      border-radius: 5px;
+      border: 1px solid #CDD1E0;
+      background: -1000px 0 no-repeat url(https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/custom-checkbox-tick.svg);
+    }
+
+    #remember_me_label input:checked~.checkmark {
+      background-position: 2px 4px;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .check-checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
   </style>
 </head>
 
@@ -1129,8 +1171,10 @@
                   </ul>
                   <div style="display: flex;justify-content: space-between;">
                     <div>
-                      <input id="remember_me" type="checkbox">
-                      <label id="remember_me_label" for="remember_me">Remember Me</label>
+                      <label class="check-container" id="remember_me_label" for="remember_me">Remember Me
+                        <input id="remember_me" type="checkbox">
+                        <span class="checkmark"></span>
+                      </label>
                     </div>
                     <a id="skipValidationProfile" class="forgot-password" aria-label="Forgot your password?">Forgot your
                       password?</a>
