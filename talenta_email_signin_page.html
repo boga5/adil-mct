@@ -461,10 +461,6 @@
       width: 33%;
     }
 
-    #attributeList ul li .helpLink {
-      display: none;
-    }
-
     #attributeVerification {
       margin: 0;
     }
@@ -1032,6 +1028,28 @@
     .claims-provider-list-text-links a:link {
       color: #AB3B78;
     }
+
+    .password_li {
+      position: relative;
+    }
+
+    .password-toggle {
+      position: absolute;
+      display: inline-block;
+      cursor: pointer;
+      width: 18px;
+      height: 18px;
+      right: 15px;
+      top: 55px;
+    }
+
+    .password-toggle-show {
+      background-image: url(https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/show-password.svg);
+    }
+
+    .password-toggle-hide {
+      background-image: url(https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/hide-password.svg);
+    }
   </style>
 </head>
 
@@ -1092,9 +1110,7 @@
                         <input id="email" class="textInput" type="email" placeholder="Email Address"
                           aria-label="Email Address"
                           pattern="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"
-                          title="Email address that can be used to contact you." autofocus="autofocus" /><a
-                          class="helpLink tiny" href="javascript:void(0)"
-                          data-help="Email address that can be used to contact you.">What is this?</a>
+                          title="Email address that can be used to contact you." autofocus="autofocus" />
                       </div>
                     </li>
                     <li class="Password password_li">
@@ -1103,8 +1119,11 @@
                         <label id="password_label" for="password">Password</label>
                         <input id="password" class="textInput" type="password" placeholder="Password"
                           aria-label="Password" title="Enter password" autocomplete="new-password"
-                          aria-required="true" /><a class="helpLink tiny" href="javascript:void(0)"
-                          data-help="Enter password">What is this?</a>
+                          aria-required="true" />
+                        <i id="show-password" class="password-toggle password-toggle-show"
+                          onclick="this.style.display='none'; document.getElementById('hide-password').style.display='inline-block'; document.getElementById('password').type='text';"></i>
+                        <i id="hide-password" class="password-toggle password-toggle-hide" style="display: none;"
+                          onclick="this.style.display='none'; document.getElementById('show-password').style.display='inline-block'; document.getElementById('password').type='password';"></i>
                       </div>
                     </li>
                   </ul>
