@@ -617,10 +617,6 @@
       }
     }
 
-    /* endinject */
-  </style>
-
-  <style>
     .self_asserted_container .row .panel-default {
       padding: 28px;
       margin: auto;
@@ -917,12 +913,8 @@
       }
     }
 
-    /* endinject */
-  </style>
-
-  <style>
     .claims-provider-list-buttons {
-      margin: 34px 0;
+      margin: 24px 0 34px;
     }
 
     .accountButton {
@@ -1078,20 +1070,11 @@
       width: 20px;
       border-radius: 5px;
       border: 1px solid #CDD1E0;
-      background: -1000px 0 no-repeat url(https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/custom-checkbox-tick.svg);
     }
 
     #remember_me_label input:checked~.checkmark {
-      background-position: 2px 4px;
+      background: 2px 4px no-repeat url(https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/custom-checkbox-tick.svg);
     }
-
-    /* Create the checkmark/indicator (hidden when not checked) */
-    .check-checkmark:after {
-      content: "";
-      position: absolute;
-      display: none;
-    }
-
   </style>
 </head>
 
@@ -1205,6 +1188,12 @@
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- images preload -->
+  <div style="display: none;">
+    <img src="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/hide-password.svg">
+    <img src="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/custom-checkbox-tick.svg">
   </div>
 </body>
 
