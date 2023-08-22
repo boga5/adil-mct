@@ -1145,10 +1145,8 @@
                         <input id="password" class="textInput" type="password" placeholder="Password"
                           aria-label="Password" title="Enter password" autocomplete="new-password"
                           aria-required="true" />
-                        <i id="show-password" class="password-toggle password-toggle-show"
-                          onclick="this.style.display='none'; document.getElementById('hide-password').style.display='inline-block'; document.getElementById('password').type='text';"></i>
-                        <i id="hide-password" class="password-toggle password-toggle-hide" style="display: none;"
-                          onclick="this.style.display='none'; document.getElementById('show-password').style.display='inline-block'; document.getElementById('password').type='password';"></i>
+                        <i id="show-password" class="password-toggle password-toggle-show"></i>
+                        <i id="hide-password" class="password-toggle password-toggle-hide" style="display: none;"></i>
                       </div>
                     </li>
                   </ul>
@@ -1190,7 +1188,23 @@
     </div>
   </div>
 
-  <!-- images preload -->
+  <script>
+    const password = document.getElementById("password");
+    const showIcon = document.getElementById("show-password");
+    const hideIcon = document.getElementById("hide-password");
+    showIcon.addEventListener("click", (e) => {
+      showIcon.style.display = "none";
+      hideIcon.style.display = "inline-block";
+      password.type = "text";
+    });
+    hideIcon.addEventListener("click", (e) => {
+      hideIcon.style.display = "none";
+      showIcon.style.display = "inline-block";
+      password.type = "password";
+    });
+  </script>
+
+  <!-- preload images -->
   <div style="display: none;">
     <img src="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/hide-password.svg">
     <img src="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/custom-checkbox-tick.svg">

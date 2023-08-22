@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Talenta AI | Email Sign in</title>
+  <title>Talenta AI | Email Sign up</title>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -197,8 +197,7 @@
     }
 
     #attributeList {
-      margin-top: 24px;
-      margin-bottom: 26px;
+      margin: 24px 0 0;
     }
 
     #attributeList ul {
@@ -1075,6 +1074,20 @@
     #remember_me_label input:checked~.checkmark {
       background: 2px 4px no-repeat url(https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/custom-checkbox-tick.svg);
     }
+
+    button.sendCode {
+      width: 100%;
+      min-height: 50px;
+      height: auto;
+      background-color: #420b2f;
+      color: #FFFFFFE5;
+      border-radius: 10px;
+      margin-top: 34px;
+    }
+
+    button.sendCode:hover {
+      background-color: #2e0821;
+    }
   </style>
 </head>
 
@@ -1094,14 +1107,14 @@
               alt="Talenta Logo" />
             <div id="api" data-name="SelfAsserted" role="main">
               <div class="heading">
-                <h1 role="heading">Sign in</h1>
+                <h1 role="heading">Sign up</h1>
               </div>
-              <div class="claims-provider-list-buttons social" aria-label="Sign in with your social account"
+              <div class="claims-provider-list-buttons social" aria-label="Sign up with your social account"
                 role="form">
                 <div class="options">
                   <div>
                     <button class="accountButton firstButton claims-provider-selection" id="GoogleExchange"
-                      role="link">Sign in with
+                      role="link">Sign up with
                       Google</button>
                   </div>
                   <div>
@@ -1109,7 +1122,7 @@
                       in with Microsoft</button>
                   </div>
                   <div>
-                    <button class="accountButton claims-provider-selection" id="FacebookExchange" role="link">Sign in
+                    <button class="accountButton claims-provider-selection" id="FacebookExchange" role="link">Sign up
                       with Facebook</button>
                   </div>
                 </div>
@@ -1131,7 +1144,7 @@
                     <li class="EmailBox email_li">
                       <div class="attrEntry">
                         <div class="error itemLevel" role="alert"></div>
-                        <label id="email_label" for="email">Sign in with your email address</label>
+                        <label id="email_label" for="email">Sign up with your email address</label>
                         <input id="email" class="textInput" type="email" placeholder="Email Address"
                           aria-label="Email Address"
                           pattern="^[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+(?:\.[a-zA-Z0-9!#$%&amp;'+^_`{}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"
@@ -1141,45 +1154,44 @@
                     <li class="Password password_li">
                       <div class="attrEntry">
                         <div class="error itemLevel" role="alert"></div>
-                        <label id="password_label" for="password">Password</label>
+                        <label id="password_label" for="password">New Password</label>
                         <input id="password" class="textInput" type="password" placeholder="Password"
                           aria-label="Password" title="Enter password" autocomplete="new-password"
                           aria-required="true" />
-                        <i id="show-password" class="password-toggle password-toggle-show"
-                          onclick="this.style.display='none'; document.getElementById('hide-password').style.display='inline-block'; document.getElementById('password').type='text';"></i>
-                        <i id="hide-password" class="password-toggle password-toggle-hide" style="display: none;"
-                          onclick="this.style.display='none'; document.getElementById('show-password').style.display='inline-block'; document.getElementById('password').type='password';"></i>
+                        <i id="show-password" class="password-toggle password-toggle-show"></i>
+                        <i id="hide-password" class="password-toggle password-toggle-hide" style="display: none;"></i>
+                      </div>
+                    </li>
+                    <li class="Password password_li">
+                      <div class="attrEntry">
+                        <div class="error itemLevel" role="alert"></div>
+                        <label id="password2_label" for="password">Confirm New Password</label>
+                        <input id="password2" class="textInput" type="password" placeholder="Password"
+                          aria-label="Password" title="Enter password" autocomplete="new-password"
+                          aria-required="true" />
+                        <i id="show-password2" class="password-toggle password-toggle-show"></i>
+                        <i id="hide-password2" class="password-toggle password-toggle-hide" style="display: none;"></i>
                       </div>
                     </li>
                   </ul>
-                  <div style="display: flex;justify-content: space-between;">
-                    <div>
-                      <label class="check-container" id="remember_me_label" for="remember_me">Remember Me
-                        <input id="remember_me" type="checkbox">
-                        <span class="checkmark"></span>
-                      </label>
-                    </div>
-                    <a id="skipValidationProfile" class="forgot-password" aria-label="Forgot your password?">Forgot your
-                      password?</a>
-                  </div>
                 </div>
+
+                <div class="claims-provider-list-text-links" style="margin-top: 0;">
+                  <p>
+                    or <a class="text-link" id="???" href="???">Phone Number</a>
+                  </p>
+                </div>
+
                 <div class="buttons">
-                  <button id="continue" type="submit" form="attributeVerification" aria-disabled="false"
+                  <button id="continue" type="submit" class="sendCode" form="attributeVerification" aria-disabled="false"
                     aria-label="Continue">
-                    Login
+                    Send Verification
                   </button>
                 </div>
 
                 <div class="claims-provider-list-text-links">
                   <p>
-                    Don't have an account?
-                  </p>
-                  <p>Sign up with <a class="text-link" id="SignUpWithLogonPhoneExchange"
-                      href="/bijibijiauthb2c.onmicrosoft.com/B2C_1_Talenta_Userflow/api/CombinedSigninAndSignup/unified?claimsexchange=SignUpWithLogonPhoneExchange&amp;csrf_token=RlF3d1cvNzRIbi9tMnNvSnFVclE4NS9DaVo0Zm1vR3hUKzN1Y3doUC9iZUtrcUMrMGJDb25FUmRyZEhKNlZnNjlvT2xTRXlDTXBNN2dxMUl4SC9Ta0E9PTsyMDIzLTA3LTI3VDA3OjI5OjE0LjYzMDM5OTZaO1llNTd5MG40Wm1yU0M4MXNQTzlnUmc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJhYzk4NGI5ZS1jNGY5LTQ5ZWMtYTdmMi00NmQzYzZhNDE2MzQifQ&amp;p=B2C_1_Talenta_Userflow">Phone
-                      Number</a>
-                    or
-                    <a class="text-link" id="SignUpWithLogonEmailExchange"
-                      href="/bijibijiauthb2c.onmicrosoft.com/B2C_1_Talenta_Userflow/api/CombinedSigninAndSignup/unified?claimsexchange=SignUpWithLogonEmailExchange&amp;csrf_token=RlF3d1cvNzRIbi9tMnNvSnFVclE4NS9DaVo0Zm1vR3hUKzN1Y3doUC9iZUtrcUMrMGJDb25FUmRyZEhKNlZnNjlvT2xTRXlDTXBNN2dxMUl4SC9Ta0E9PTsyMDIzLTA3LTI3VDA3OjI5OjE0LjYzMDM5OTZaO1llNTd5MG40Wm1yU0M4MXNQTzlnUmc9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiJhYzk4NGI5ZS1jNGY5LTQ5ZWMtYTdmMi00NmQzYzZhNDE2MzQifQ&amp;p=B2C_1_Talenta_Userflow">Email</a>
+                    Already have an account? <a class="text-link" id="???" href="???">Sign in</a>
                   </p>
                 </div>
               </form>
@@ -1190,7 +1202,36 @@
     </div>
   </div>
 
-  <!-- images preload -->
+  <script>
+    const password = document.getElementById("password");
+    const password2 = document.getElementById("password2");
+    const showIcon = document.getElementById("show-password");
+    const showIcon2 = document.getElementById("show-password2");
+    const hideIcon = document.getElementById("hide-password");
+    const hideIcon2 = document.getElementById("hide-password2");
+    const onShow = (e) => {
+      showIcon.style.display = "none";
+      showIcon2.style.display = "none";
+      hideIcon.style.display = "inline-block";
+      hideIcon2.style.display = "inline-block";
+      password.type = "text";
+      password2.type = "text";
+    };
+    const onHide = (e) => {
+      hideIcon.style.display = "none";
+      hideIcon2.style.display = "none";
+      showIcon.style.display = "inline-block";
+      showIcon2.style.display = "inline-block";
+      password.type = "password";
+      password2.type = "password";
+    }
+    showIcon.addEventListener("click", onShow);
+    showIcon2.addEventListener("click", onShow);
+    hideIcon.addEventListener("click", onHide);
+    hideIcon2.addEventListener("click", onHide);
+  </script>
+
+  <!-- preload images -->
   <div style="display: none;">
     <img src="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/hide-password.svg">
     <img src="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/custom-checkbox-tick.svg">
