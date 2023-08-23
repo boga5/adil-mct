@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+
+<html lang="en-US" dir="ltr">
+
+<head>
+  <title>TALENTA AI</title>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link rel="icon" type="image/x-icon"
+    href="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="https://bijibijistorage.blob.core.windows.net/talenta-custom-homepage/images/apple-touch-icon.png">
+
+
+  <style>
+    body {
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 100vh;
+      margin: 0;
+      padding: 0;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      color: #323130;
+      font-family: "Segoe UI Web (West European)", Segoe UI, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
+      font-size: 14px;
+    }
+
+    #msccBanner {
+      position: fixed;
+      bottom: 0px;
+      right: 0;
+      left: 0;
+    }
+
+
+    .focus {
+      font-weight: 600;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .logo {
+      height: 40px;
+      width: auto;
+    }
+
+    .main-header-container {
+      z-index: 20;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+    }
+
+    .main-banner-container__wrapper {
+      margin-top: 30px;
+    }
+
+    .main-content-wrapper__banner-container {
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+    }
+
+    @media (min-width: 768px) {
+      .main-content-wrapper__banner-container {
+        min-height: 480px;
+      }
+    }
+
+    .language-bar-wrapper {
+      background: #fff;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 8px 8px;
+    }
+
+    .language-link {
+      color: #333;
+      font-size: 12px;
+      line-height: 15px;
+      margin: 0 4px;
+    }
+
+    .landing-languge-dropdown {
+      margin-right: 8px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-size: 12px;
+      font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", "Helvetica Neue", "sans-serif";
+    }
+
+    html[dir="rtl"] .landing-languge-dropdown {
+      margin-left: 8px;
+    }
+
+    .landing-languge-dropdown option {
+      background-color: rgb(244, 244, 244);
+      color: rgb(68, 68, 68);
+      cursor: pointer;
+      padding: 0px 8px;
+      font-family: inherit;
+    }
+
+    .header-wrapper__main-nav-wrapper {
+      -webkit-transition: all 100ms;
+      transition: all 100ms;
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      height: 56px;
+    }
+
+    .main-content-wrapper {
+      overflow-y: hidden;
+    }
+
+
+    .main-get-started-button {
+      background: transparent;
+      padding: 8px 16px;
+      color: #fff;
+      text-align: center;
+      border: 2px solid #fff;
+      border-radius: 4px;
+      font-weight: 700;
+      max-width: 120px;
+      font-family: inherit;
+      box-sizing: content-box;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .banner-heading {
+      text-align: left;
+      font-size: 32px;
+      font-weight: 400;
+      color: rgb(255, 255, 255);
+      overflow-wrap: break-word;
+      line-height: 44px;
+      text-shadow: rgba(0, 0, 0, 0.12) 2px 2px 8px;
+    }
+
+    .cards-wrapper {
+      padding: 32px 8%;
+    }
+
+    .category-wrapper__heading {
+      font-size: 21px;
+      line-height: 20px;
+      font-weight: 100;
+      color: #333333;
+      padding: 24px 16px;
+      overflow-wrap: break-word;
+    }
+
+    .category-wrapper__course-container {
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 16px;
+      align-self: flex-start;
+      justify-content: flex-start;
+    }
+
+    .course-card-container {
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      flex: 0 1 calc(33% - 32px);
+      margin: 16px;
+      box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 5px 0px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .course-card-container:hover {
+      outline: 1px solid #777777;
+    }
+
+    .course-card-container__course-image {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .course-card-container__course-image-div {
+      position: relative;
+      padding-top: 56.25%;
+      background-size: cover;
+      background-position: top center;
+      overflow: hidden;
+      border-bottom: 1px solid #dedede;
+    }
+
+    .course-card-container__picture-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%
+    }
+
+    .course-card-container__course-name {
+      display: -webkit-box;
+      line-height: 24px;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      margin: 16px;
+      max-width: 300px;
+      margin-right: 8px;
+      margin-left: 8px;
+      text-overflow: ellipsis;
+      font-size: 16px;
+      font-weight: 300;
+      color: rgb(51, 51, 51);
+      text-align: left;
+      overflow: hidden;
+      word-break: break-word;
+    }
+
+    html[dir="rtl"] .course-card-container__course-name {
+      text-align: right;
+    }
+
+    .footer-container {
+      display: flex;
+      display: -webkit-flex;
+      flex: 1 0 auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: rgb(244, 244, 244);
+      margin-bottom: 5px;
+      color: rgb(133, 133, 133);
+      padding: 20px 16px;
+      text-align: center;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .footer-container>* {
+      margin: 8px 0;
+    }
+
+    .footer-container__footer-title {
+      text-align: center;
+      font-size: 21px;
+      font-weight: 400;
+      line-height: 28px;
+      color: #696969;
+    }
+
+    .footer-container__footer-text {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #696969;
+    }
+
+    .static-footer-container {
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      flex: 0 0 44px;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+      background-color: #696969;
+      padding: 8px 16px;
+    }
+
+    .empty-courses-footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .static-footer-container__link {
+      color: inherit;
+    }
+
+    .modal-wrapper {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-wrapper-opera {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: rgb(0, 0, 0);
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-flex-wrapper {
+      display: flex;
+      display: -webkit-flex;
+      flex: 1 1 100%;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+
+    .modal-flex-wrapper-opera {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .modal-content {
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      background-color: #fefefe;
+      border: 1px solid #888;
+      width: 90%;
+      max-width: 420px;
+      height: 75vh;
+      border-radius: 2px;
+    }
+
+    .opera-content {
+      background-color: #fefefe;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      padding: 8px;
+      text-align: center;
+      align-items: center;
+      overflow: auto;
+      height: 90%;
+      width: 90%;
+    }
+
+    .opera-list-container {
+      text-align: center;
+      width: 90%;
+    }
+
+    .opera-list__item {
+      font-size: 14px;
+      font-weight: 400;
+      text-align: left;
+      line-height: 20px;
+      margin: 4px 0;
+    }
+
+    .opera-icon {
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+    }
+
+    .opera-image {
+      height: 160px;
+      margin: 8px auto;
+    }
+
+    .modal-container___content-scroll {
+      height: 100%;
+      overflow: auto;
+      padding: 16px;
+    }
+
+    .modal-container___heading {
+      font-size: 21px;
+      font-weight: 100;
+      margin-bottom: 8px;
+    }
+
+    .modal-container___subheading {
+      font-size: 13px;
+      font-weight: 400;
+      margin: 16px 0px;
+    }
+
+    .modal-container__footer-actions {
+      display: -webkit-flex;
+      display: flex;
+      flex: 0 0 48px;
+      flex-direction: row;
+      align-items: center;
+      border-top: 1px solid #dedede;
+      justify-content: flex-end;
+      padding: 0 8px;
+    }
+
+    .modal-container__footer-actions>* {
+      margin-left: 8px;
+    }
+
+    .themed-button-secondary {
+      background: rgb(244, 244, 244);
+      border: none;
+      color: rgb(51, 51, 51);
+      text-align: center;
+      cursor: pointer;
+      min-width: 80px;
+      height: 32px;
+      padding: 0 16px;
+      font-size: 14px;
+      font-weight: 600;
+      box-sizing: border-box;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      border-image: initial;
+      text-decoration: none;
+      border-radius: 0px;
+    }
+
+    .modal-close-button {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      height: 16px;
+      width: 16px;
+    }
+
+    .loader-container {
+      display: -webkit-flex;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @-webkit-keyframes load8 {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes load8 {
+      0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (min-width: 320px) and (max-width: 480px) {
+      .cards-wrapper {
+        padding: 32px 8px;
+      }
+
+      .course-card-container {
+        flex: 1 0 calc(100% - 16px);
+
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header-wrapper__main-nav-wrapper {
+        padding: 0 8px !important;
+      }
+
+      .empty-courses-footer {
+        position: relative;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+
+    .error-message {
+      padding-top: 30px;
+      font-size: 20px;
+      line-height: 1.25em;
+      text-align: center;
+    }
+
+    .error-modal {
+      position: relative;
+      max-height: 40vh;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
+      .main-content-wrapper__banner-container {
+        flex-direction: column-reverse;
+      }
+
+      .main-content-wrapper__heading-wrapper {
+        padding: 36px !important;
+        max-width: 100% !important;
+        align-items: center;
+        margin: 0px;
+      }
+
+      .main-content-wrapper__banner-wrapper {
+        background-position-x: center;
+      }
+
+      .banner-heading {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .main-content-wrapper__banner-container {
+        flex-direction: column-reverse;
+      }
+
+      .landing-language_menu-modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 9;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.1);
+        transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+      }
+
+      .show-landing-language__modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+      }
+
+      .landing-language_menu-modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 0.5rem 1rem;
+        width: 17.5rem;
+        box-sizing: border-box;
+        border-radius: 0.5rem;
+      }
+
+      .landing-language__radio-list {
+        text-align: left;
+        padding: 0.75rem 0rem;
+      }
+
+      .main-content-wrapper__banner-wrapper {
+        min-height: 40vh;
+        background-position-x: center;
+      }
+
+      .main-content-wrapper__heading-wrapper {
+        background-color: #fff !important;
+        margin: 0px;
+      }
+
+      .banner-heading {
+        font-size: 1.375rem;
+        line-height: 2rem;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+
+    @media screen and (min-width: 1400px) {
+      .course-card-container {
+        flex: 0 1 calc(25% - 32px);
+      }
+    }
+
+    @media screen and (min-width: 1600px) {
+      .course-card-container {
+        flex: 0 1 calc(20% - 32px);
+      }
+    }
+
+    @media screen and (max-width: 765px) {
+      .language-bar-wrapper {
+        display: block;
+        white-space: nowrap;
+        overflow-x: auto;
+        text-align: right;
+      }
+    }
+
+    .empty-state__container {
+      height: 100%;
+      text-align: center;
+    }
+
+    .empty-state__image {
+      width: 100%;
+      max-width: 280px;
+    }
+
+    @media screen and (max-width: 320px) {
+      .logo {
+        height: auto;
+        width: 80%;
+      }
+    }
+  </style>
+
+  <style>
+    .header-wrapper__main-nav-wrapper {
+      background: transparent;
+      padding: 16px 48px;
+    }
+
+    .sign-in-button-invert {
+      color: #420b2f !important;
+      background-color: #fff !important;
+    }
+
+    .header__signing-button {
+      -webkit-transition: all 100ms;
+      transition: all 100ms;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      padding-top: 0px;
+      padding-right: 16px;
+      padding-bottom: 0px;
+      padding-left: 16px;
+      min-width: 80px;
+      height: 28px;
+      background-color: #420b2f;
+      color: #fff;
+      user-select: none;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      border-image: initial;
+      text-decoration: none;
+      border-radius: 4px;
+      line-height: 28px;
+      box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
+      box-sizing: content-box;
+      font-family: inherit;
+    }
+
+    .main-content-wrapper__heading-wrapper {
+      display: flex;
+      display: -webkit-flex;
+      flex-direction: column;
+      background-color: #420b2f;
+      justify-content: center;
+      padding: 75px 48px 32px 48px;
+      max-width: 30%;
+      min-width: 25%;
+    }
+
+    .color-navbar {
+      background: #420b2f;
+      padding: 8px 48px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.18);
+    }
+
+    .main-content-wrapper__banner-wrapper {
+      display: flex;
+      display: -webkit-flex;
+      flex: 1;
+      max-height: 540px;
+    }
+
+    .banner {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 480px) {
+      .landing-page-header-line-break {
+        display: block !important;
+      }
+
+      .logo {
+        height: auto;
+        width: 40%;
+      }
+
+      input[name="landing-page-languages-options-list"] {
+        accent-color: #420b2f;
+      }
+
+      .main-banner-container__wrapper {
+        margin-top: 0rem;
+      }
+
+      .banner {
+        height: 50vh;
+      }
+
+      .main-get-started-button {
+        background-color: #420b2f;
+        color: black;
+      }
+
+      .main-get-started-button {
+        display: none;
+      }
+
+      .langing-sign-in-btn {
+        padding: 0.75rem 1.25rem;
+        display: inline-block !important;
+      }
+
+      .main-content-wrapper__heading-wrapper {
+        padding: 0.5rem 1rem 0rem !important;
+        background-color: #fff;
+        max-width: 70%;
+      }
+
+      .main-content-wrapper__language-popup-menu {
+        display: block !important;
+        padding: 0.31rem 1rem;
+      }
+
+      .main-content-wrappr__logo-title-wrapper {
+        display: block !important;
+        padding: 1.5rem 1rem 0rem;
+      }
+
+      .footer__language-popup-menu {
+        font-size: 0.75rem;
+        font-weight: 400;
+        padding-top: 1.875rem;
+        padding-bottom: 0.625rem;
+      }
+
+      .landing-language__menu-container {
+        color: #420b2f;
+        cursor: pointer;
+      }
+
+      .banner-logo-title {
+        display: inline-block;
+        color: #420b2f;
+      }
+
+      .banner-heading {
+        text-align: left;
+        color: #212121;
+        font-size: 1.75rem;
+        font-weight: 300;
+        line-height: 2.0625rem;
+      }
+    }
+
+    ul {
+      margin: 0px;
+      padding: 0px;
+    }
+
+    li {
+      display: -webkit-flex;
+      display: flex;
+      flex-direction: row;
+      margin: 4px 0;
+    }
+
+    li::before {
+      content: "•";
+      font-weight: 600;
+      display: inline-block;
+      width: 1em;
+      color: #420b2f;
+    }
+
+    html[dir="rtl"] .lesson-bullet {
+      margin-left: 8px;
+      margin-right: 0;
+    }
+
+    .themed-button-primary {
+      background: #420b2f;
+      border: none;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+      min-width: 80px;
+      height: 32px;
+      padding: 0 16px;
+      font-size: 14px;
+      font-weight: 600;
+      box-sizing: border-box;
+      border-width: 1px;
+      border-style: solid;
+      border-color: transparent;
+      border-image: initial;
+      text-decoration: none;
+      border-radius: 0px;
+    }
+
+    .loader,
+    .loader:after {
+      border-radius: 50%;
+      width: 10em;
+      height: 10em;
+    }
+
+    .loader {
+      margin: 60px auto;
+      font-size: 3px;
+      position: relative;
+      text-indent: -9999em;
+      border-top: 1.1em solid rgba(0, 0, 0, 0.1);
+      border-right: 1.1em solid rgba(0, 0, 0, 0.1);
+      border-bottom: 1.1em solid rgba(0, 0, 0, 0.1);
+      border-left: 1.1em solid #420b2f;
+      -webkit-transform: translateZ(0);
+      -ms-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-animation: load8 1.1s infinite linear;
+      animation: load8 1.1s infinite linear;
+    }
+
+    .main-content-wrappr__logo-title-wrapper,
+    .langing-sign-in-btn,
+    .main-content-wrapper__language-popup-menu,
+    .landing-page-header-line-break {
+      display: none;
+    }
+
+    @media (min-width: 481px) and (max-width: 768px) and (orientation: portrait) {
+      .header-wrapper__main-nav-wrapper {
+        background: #420b2f;
+        padding: 8px 48px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.18);
+      }
+
+      .header__signing-button {
+        color: #fff;
+        background-color: #420b2f;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .landing-language__menu-header {
+        text-align: initial;
+        margin-block-end: 0.5em;
+        margin-block-start: 0em;
+
+      }
+
+      .langing-page-language__modal-button {
+        font-size: 0.875rem;
+        background: none;
+        border: 0rem;
+        padding-left: 0.5rem;
+        color: #420b2f;
+      }
+
+      .landing-language__menu-content {
+        padding-bottom: 1rem;
+        font-size: 0.75rem;
+        font-weight: 400;
+        line-height: 1rem;
+        text-align: initial;
+      }
+
+      .landing-language__modal-input-label {
+        padding-left: 2rem;
+        line-height: 1.5rem;
+      }
+
+      .landing-page-language__modal-footer {
+        text-align: right;
+        padding: 1rem 0rem;
+      }
+
+      .landing-language__modal-container {
+        max-height: 288px;
+        overflow: auto;
+      }
+
+      .header-wrapper__main-nav-wrapper {
+        display: none;
+        background: #420b2f;
+        padding: 8px 48px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.18);
+      }
+
+      .main-header-container {
+        display: none;
+      }
+
+      .header__signing-button {
+        color: #fff;
+        background-color: #420b2f;
+      }
+
+    }
+
+    .redirect-modal {
+      position: relative;
+      max-height: 300px;
+      border-radius: 10px;
+      min-height: 250px;
+    }
+
+    .redirect-site-welcome {
+      min-height: 150px;
+      height: 75%;
+      background-color: #420b2f !important;
+      color: #fff !important;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      padding: 40px;
+    }
+
+    .redirect-welcome-text {
+      margin-top: 20px;
+      font-size:
+    }
+
+    .redirect-deployment-title {
+      font-size: 32px;
+      margin-top: 20px
+    }
+
+    .redirect-message-wrapper {
+      font-size: 18px;
+      padding: 20px 60px 20px 20px;
+      color: #535558;
+      height: 25%;
+      min-height: 100px;
+    }
+
+    .redirect-message {
+      float: left;
+    }
+
+    .redirect-loader {
+      float: right;
+      height: 20px;
+    }
+  </style>
+
+</head>
+
+<body class="main-scroll-wrapper" id="main-body">
+  <div class="modal-wrapper" id="redirectionModalRoot" onclick="return void">
+    <div class="modal-flex-wrapper">
+      <div class="modal-content redirect-modal" onclick="return void">
+        <div class="redirect-site-welcome">
+          <div><img class="logo"
+              src="https://talentaid.biji-biji.com/storage/images/1/TALENTAAILogo150x60_6l9fi_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+              onerror='this.onerror = null; this.src="https://talentaid.biji-biji.com/storage/images/1/TALENTAAILogo150x60_6l9fi.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"'
+              alt="TALENTA AI" /></div>
+          <div class="redirect-welcome-text">Welcome to</div>
+          <div class="redirect-deployment-title">TALENTA AI</div>
+        </div>
+        <div class="redirect-message-wrapper">
+          <span class="redirect-message"> Redirecting to login...</span>
+          <span>
+            <img class="redirect-loader" src="Content/images/loader.svg" />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="main-wrapper">
+    <header class="main-header-container">
+      <div class="language-bar-wrapper">
+        <a href="/" data-lang="English (United States)" Name="English (United States)" aria-label="English"
+          class="language-link focus" onclick="_HandleLanguageClick(event)">English (United States)</a>
+        <a href="/" data-lang="Indonesia (Indonesia)" Name="Indonesia (Indonesia)" aria-label="Indonesian"
+          class="language-link" onclick="_HandleLanguageClick(event)">Indonesia (Indonesia)</a>
+      </div>
+      <div class="header-wrapper">
+        <div class="header-wrapper__main-nav-wrapper">
+          <a href="/">
+            <img class="logo"
+              src="https://talentaid.biji-biji.com/storage/images/1/TALENTAAILogo150x60_6l9fi_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+              onerror='this.onerror = null; this.src="https://talentaid.biji-biji.com/storage/images/1/TALENTAAILogo150x60_6l9fi.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"'
+              alt="TALENTA AI" />
+          </a>
+          <button class="header__signing-button" onclick="SignIn()">
+            SIGN IN
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="main-banner-container__wrapper">
+      <div class="main-content-wrapper__banner-container">
+        <div class="main-content-wrapper__heading-wrapper">
+          <h1 class="banner-heading">Welcome to <br class="landing-page-header-line-break" /> TALENTA AI</h1>
+          <button class="main-get-started-button" onclick="SignIn()">GET STARTED</button>
+        </div>
+        <div class="main-content-wrappr__logo-title-wrapper">
+          <a href="/">
+            <img class="logo"
+              src="https://talentaid.biji-biji.com/storage/images/1/TALENTAAILogo150x60_6l9fi_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+              onerror='this.onerror = null; this.src="https://talentaid.biji-biji.com/storage/images/1/TALENTAAILogo150x60_6l9fi.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"'
+              alt="TALENTA AI" />
+          </a>
+        </div>
+        <div class="main-content-wrapper__banner-wrapper">
+          <img
+            src=https://talentaid.biji-biji.com/storage/images/1/9_4t4sy_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r
+            class="banner"
+            onerror='this.onerror = null; this.src="https://talentaid.biji-biji.com/storage/images/1/9_4t4sy.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"'
+            alt="Banner Image" />
+        </div>
+      </div>
+      <div class="main-content-wrapper__language-popup-menu">
+        <button class="header__signing-button langing-sign-in-btn" onclick="SignIn()">
+          SIGN IN
+        </button>
+        <div class="footer__language-popup-menu">
+          <span>Currently set to English (United States) langauage.</span>
+          <span class="landing-language__menu-container" onclick="OnLanguageModalOpen(event)">Change
+            language</span>
+          <div class="landing-language_menu-modal">
+            <div class="landing-language_menu-modal-content">
+              <h4 class="landing-language__menu-header"> Change language</h4>
+              <p class="landing-language__menu-content">The app is currently set to English (United
+                States) langauage. To change it to your prefered language select one of the below items.
+              </p>
+              <div class="landing-language__modal-container">
+              </div>
+              <div class="landing-page-language__modal-footer">
+                <button class="langing-page-language__modal-button" onclick="OnLanguageModalOpen(event)">Cancel</button>
+                <button class="langing-page-language__modal-button"
+                  onclick="OnLanguageModalOpen(event,true)">Ok</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+  </div>
+  </section>
+  <section class="cards-wrapper" role="main">
+    <div id="coursesContainer">
+      <div class="category-wrapper">
+        <h2 class="category-wrapper__heading">AI Course: Microsoft Azure AI Fundamentals</h2>
+        <div class="category-wrapper__course-container">
+          <div class="course-card-container" id="18" onclick="onCardClick(18)" onkeypress="onCardClick(18)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 1: Memulai dengan AI di Azzure Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/BAB1_3x85o_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 1: Memulai dengan AI di Azzure Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/BAB1_3x85o.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 1: Memulai dengan AI di Azzure Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 1: Memulai dengan AI di Azzure</p>
+          </div>
+          <div class="course-card-container" id="28" onclick="onCardClick(28)" onkeypress="onCardClick(28)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 10: Deteksi dan Analisis Wajah dengan Layanan Face Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab10-DeteksidanAnalisisW_rt8k9_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 10: Deteksi dan Analisis Wajah dengan Layanan Face Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab10-DeteksidanAnalisisW_rt8k9.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 10: Deteksi dan Analisis Wajah dengan Layanan Face Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 10: Deteksi dan Analisis Wajah dengan Layanan
+              Face</p>
+          </div>
+          <div class="course-card-container" id="29" onclick="onCardClick(29)" onkeypress="onCardClick(29)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 11: Membaca Teks dengan Layanan Computer Vision Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab11-MembacaTeksdenganLa_1n1cz_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 11: Membaca Teks dengan Layanan Computer Vision Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab11-MembacaTeksdenganLa_1n1cz.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 11: Membaca Teks dengan Layanan Computer Vision Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 11: Membaca Teks dengan Layanan Computer
+              Vision</p>
+          </div>
+          <div class="course-card-container" id="30" onclick="onCardClick(30)" onkeypress="onCardClick(30)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 12: Receipt Analysis dengan Layanan Form Recognizer Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab12-ReceiptAnalysisdeng_u899c_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 12: Receipt Analysis dengan Layanan Form Recognizer Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab12-ReceiptAnalysisdeng_u899c.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 12: Receipt Analysis dengan Layanan Form Recognizer Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 12: Receipt Analysis dengan Layanan Form
+              Recognizer</p>
+          </div>
+          <div class="course-card-container" id="31" onclick="onCardClick(31)" onkeypress="onCardClick(31)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 13: Translate Teks dan Speech Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab13-TranslateTeksdanSpe_2k0bl_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 13: Translate Teks dan Speech Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab13-TranslateTeksdanSpe_2k0bl.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 13: Translate Teks dan Speech Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 13: Translate Teks dan Speech</p>
+          </div>
+          <div class="course-card-container" id="32" onclick="onCardClick(32)" onkeypress="onCardClick(32)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 14: Membuat Model Bahasa dengan Conversational Language Understanding Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab14-MembuatModelBahasad_tq22o_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp"
+                  alt="Bab 14: Membuat Model Bahasa dengan Conversational Language Understanding Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab14-MembuatModelBahasad_tq22o.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 14: Membuat Model Bahasa dengan Conversational Language Understanding Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 14: Membuat Model Bahasa dengan Conversational
+              Language Understanding</p>
+          </div>
+          <div class="course-card-container" id="33" onclick="onCardClick(33)" onkeypress="onCardClick(33)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 15: Membuat Bot dengan Layanan Language dan Azure Bot Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab15-MembuatBotdenganLay_0t7ls_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 15: Membuat Bot dengan Layanan Language dan Azure Bot Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab15-MembuatBotdenganLay_0t7ls.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 15: Membuat Bot dengan Layanan Language dan Azure Bot Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 15: Membuat Bot dengan Layanan Language dan
+              Azure Bot</p>
+          </div>
+          <div class="course-card-container" id="34" onclick="onCardClick(34)" onkeypress="onCardClick(34)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 16: Analisis Teks dengan Layanan Language Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab16-AnalisisTeksdenganL_9y2cp_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 16: Analisis Teks dengan Layanan Language Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab16-AnalisisTeksdenganL_9y2cp.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 16: Analisis Teks dengan Layanan Language Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 16: Analisis Teks dengan Layanan Language</p>
+          </div>
+          <div class="course-card-container" id="35" onclick="onCardClick(35)" onkeypress="onCardClick(35)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 17: Recognize and Synthesize Speech Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab17-RecognizeandSynthes_5l9fo_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 17: Recognize and Synthesize Speech Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab17-RecognizeandSynthes_5l9fo.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 17: Recognize and Synthesize Speech Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 17: Recognize and Synthesize Speech</p>
+          </div>
+          <div class="course-card-container" id="20" onclick="onCardClick(20)" onkeypress="onCardClick(20)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 2: Pengantar Azure OpenAI Service Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/BAB2_vb9ta_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 2: Pengantar Azure OpenAI Service Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/BAB2_vb9ta.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 2: Pengantar Azure OpenAI Service Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 2: Pengantar Azure OpenAI Service</p>
+          </div>
+          <div class="course-card-container" id="21" onclick="onCardClick(21)" onkeypress="onCardClick(21)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 3: Menggunakan Machine Learning Otomatis dengan Azure Machine Learning Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab3-MenggunakanMachineLe_mi9po_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp"
+                  alt="Bab 3: Menggunakan Machine Learning Otomatis dengan Azure Machine Learning Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab3-MenggunakanMachineLe_mi9po.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 3: Menggunakan Machine Learning Otomatis dengan Azure Machine Learning Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 3: Menggunakan Machine Learning Otomatis
+              dengan Azure Machine Learning</p>
+          </div>
+          <div class="course-card-container" id="22" onclick="onCardClick(22)" onkeypress="onCardClick(22)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 4: Membuat Model Regression dengan Azure Machine Learning Designer Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab4-MembuatModelRegressi_lr9zc_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp"
+                  alt="Bab 4: Membuat Model Regression dengan Azure Machine Learning Designer Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab4-MembuatModelRegressi_lr9zc.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 4: Membuat Model Regression dengan Azure Machine Learning Designer Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 4: Membuat Model Regression dengan Azure
+              Machine Learning Designer</p>
+          </div>
+          <div class="course-card-container" id="23" onclick="onCardClick(23)" onkeypress="onCardClick(23)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 5: Membuat Model Classification dengan Azure Machine Learning Designer Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab5-MembuatModelClassifi_cz64k_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp"
+                  alt="Bab 5: Membuat Model Classification dengan Azure Machine Learning Designer Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab5-MembuatModelClassifi_cz64k.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 5: Membuat Model Classification dengan Azure Machine Learning Designer Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 5: Membuat Model Classification dengan Azure
+              Machine Learning Designer</p>
+          </div>
+          <div class="course-card-container" id="24" onclick="onCardClick(24)" onkeypress="onCardClick(24)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 6: Membuat Model Clustering dengan Azure Machine Learning Designer Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab6-MembuatModelClusteri_7g7bp_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp"
+                  alt="Bab 6: Membuat Model Clustering dengan Azure Machine Learning Designer Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab6-MembuatModelClusteri_7g7bp.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 6: Membuat Model Clustering dengan Azure Machine Learning Designer Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 6: Membuat Model Clustering dengan Azure
+              Machine Learning Designer</p>
+          </div>
+          <div class="course-card-container" id="25" onclick="onCardClick(25)" onkeypress="onCardClick(25)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 7: Analisis Gambar dengan Layanan Custom Vision Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab7-AnalisisGambardengan_cx3su_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 7: Analisis Gambar dengan Layanan Custom Vision Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab7-AnalisisGambardengan_cx3su.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 7: Analisis Gambar dengan Layanan Custom Vision Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 7: Analisis Gambar dengan Layanan Custom
+              Vision</p>
+          </div>
+          <div class="course-card-container" id="26" onclick="onCardClick(26)" onkeypress="onCardClick(26)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 8: Image Classification dengan Layanan Custom Vision Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab8-ImageClassificationd_pa4rq_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 8: Image Classification dengan Layanan Custom Vision Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab8-ImageClassificationd_pa4rq.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 8: Image Classification dengan Layanan Custom Vision Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 8: Image Classification dengan Layanan Custom
+              Vision</p>
+          </div>
+          <div class="course-card-container" id="27" onclick="onCardClick(27)" onkeypress="onCardClick(27)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Bab 9: Object Detection di Gambar dengan Layanan Custom Vision Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab9-ObjectDetectiondiGam_g628m_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Bab 9: Object Detection di Gambar dengan Layanan Custom Vision Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/Bab9-ObjectDetectiondiGam_g628m.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Bab 9: Object Detection di Gambar dengan Layanan Custom Vision Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Bab 9: Object Detection di Gambar dengan Layanan
+              Custom Vision</p>
+          </div>
+          <div class="course-card-container" id="37" onclick="onCardClick(37)" onkeypress="onCardClick(37)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Microsoft Azure AI Fundamentals Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/POSTTESTAITHUMBNAIL_i49mp_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Microsoft Azure AI Fundamentals Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/POSTTESTAITHUMBNAIL_i49mp.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Microsoft Azure AI Fundamentals Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Microsoft Azure AI Fundamentals</p>
+          </div>
+          <div class="course-card-container" id="13" onclick="onCardClick(13)" onkeypress="onCardClick(13)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container" alt="Persiapan Belajar AI Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/ThumbnailCoursesMCTAI-nop_d38fz_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Persiapan Belajar AI Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/ThumbnailCoursesMCTAI-nop_d38fz.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Persiapan Belajar AI Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Persiapan Belajar AI</p>
+          </div>
+          <div class="course-card-container" id="36" onclick="onCardClick(36)" onkeypress="onCardClick(36)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Pre-Test: Microsoft Azure AI Fundamentals Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/PRETESTTHUMB_042sh_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Pre-Test: Microsoft Azure AI Fundamentals Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/PRETESTTHUMB_042sh.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Pre-Test: Microsoft Azure AI Fundamentals Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Pre-Test: Microsoft Azure AI Fundamentals</p>
+          </div>
+        </div>
+      </div>
+      <div class="category-wrapper">
+        <h2 class="category-wrapper__heading">Cybersecurity Course</h2>
+        <div class="category-wrapper__course-container">
+          <div class="course-card-container" id="14" onclick="onCardClick(14)" onkeypress="onCardClick(14)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Persiapan Belajar Cyber Security Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/ThumbnailCoursesMCTCSnopi_0p3l1_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Persiapan Belajar Cyber Security Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/ThumbnailCoursesMCTCSnopi_0p3l1.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Persiapan Belajar Cyber Security Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Persiapan Belajar Cyber Security</p>
+          </div>
+        </div>
+      </div>
+      <div class="category-wrapper">
+        <h2 class="category-wrapper__heading">Data Course</h2>
+        <div class="category-wrapper__course-container">
+          <div class="course-card-container" id="16" onclick="onCardClick(16)" onkeypress="onCardClick(16)"
+            role="button" tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container" alt="Persiapan Belajar Data Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/ThumbnailCoursesMCTDatano_wm4zl_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Persiapan Belajar Data Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/ThumbnailCoursesMCTDatano_wm4zl.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Persiapan Belajar Data Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Persiapan Belajar Data</p>
+          </div>
+        </div>
+      </div>
+      <div class="category-wrapper">
+        <h2 class="category-wrapper__heading">SELAMAT DATANG di TALENTA AI</h2>
+        <div class="category-wrapper__course-container">
+          <div class="course-card-container" id="1" onclick="onCardClick(1)" onkeypress="onCardClick(1)" role="button"
+            tabindex="0">
+            <div class="course-card-container__course-image-div">
+              <picture class="course-card-container__picture-container"
+                alt="Selamat datang di TALENTA AI Picture Container">
+                <source class="webpSource"
+                  data-srcset="https://talentaid.biji-biji.com/storage/images/coursesBlob/WebsiteBannerMCT3_sk8hp_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  type="image/webp" alt="Selamat datang di TALENTA AI Source Image" />
+                <img onerror="HandleImageError(event)" class="course-card-container__course-image imageSource"
+                  data-src="https://talentaid.biji-biji.com/storage/images/coursesBlob/WebsiteBannerMCT3_sk8hp.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+                  alt="Selamat datang di TALENTA AI Image" />
+              </picture>
+            </div>
+            <p class="course-card-container__course-name">Selamat datang di TALENTA AI</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- set empty-courses-footer as classname if courses are not there or hide courses flag is there otherwise set class name as empty -->
+  <div class="">
+    <footer class="static-footer-container">
+      <p class="static-footer-container__message">Powered by Microsoft</p>
+      <a class="static-footer-container__link" href="https://privacy.microsoft.com/en-us/privacystatement">
+        <p>Privacy</p>
+      </a>
+    </footer>
+  </div>
+
+  <div class="modal-wrapper" id="modalRoot">
+    <div class="modal-flex-wrapper" role="dialog" aria-labelledby="modalContent">
+      <div class="modal-content" id="modalContent">
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-wrapper" id="errorModalRoot" onclick="_HideModal('errorModalRoot')">
+    <div class="modal-flex-wrapper">
+      <div class="modal-content error-modal" onclick="return void">
+        <img class="modal-close-button" src="Content/images/close_icon1.gif" />
+        <img src="Content/images/stop_icon.svg" alt="WhitelistError" />
+        <div class="error-message">You are not authorized to access this website. Please contact your
+          administrator for access.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-wrapper-opera" id="operaModal" onclick="_HideModal('operaModal')">
+    <div class="modal-flex-wrapper-opera">
+      <div class="opera-content">
+        <img class="logo"
+          src="https://talentaid.biji-biji.com/storage/images/1/TALENTAAILogo150x60_6l9fi_webp.webp?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"
+          onerror='this.onerror = null; this.src="https://talentaid.biji-biji.com/storage/images/1/TALENTAAILogo150x60_6l9fi.png?sv=2019-07-07&amp;sr=c&amp;sig=BqxgpPoHXwo4aUAzucOqOPL1tpowkZBXXf58dnlB0MU%3D&amp;se=2023-08-24T03%3A32%3A32Z&amp;sp=r"'
+          alt="TALENTA AI" />
+        <h4>TALENTA AI</h4>
+        <ol class="opera-list-container">
+          <li class="opera-list__item">
+            Click on opera mini icon
+            <img class="opera-icon" src="Content/images/opera_mini_icon.png" />.
+          </li>
+          <li class="opera-list__item">Click on <b>Data Savings</b>.</li>
+          <li class="opera-list__item">Click on the word <b>Extreme</b>.</li>
+          <li class="opera-list__item">Click on the word <b>High</b>.</li>
+          <img class="opera-image" src="Content/images/opera_mini_data_mode.svg" />
+          <li class="opera-list__item">
+            Go back and refresh the page
+            <img class="opera-icon" src="Content/images/opera_mini_refresh_icon.png" />.
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!--Scripts are added at the bottom of body to not block rendering the html-->
+  <script defer src="Content/js/landing-page.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      var urlParams = window.location.search.substr(1).split('&').reduce(function (q, query) {
+        var chunks = query.split('=');
+        var key = chunks[0];
+        var value = chunks[1];
+        return (q[key] = value, q);
+      }, {});
+
+      OnBannerScrollListener();
+      window.addEventListener('scroll', OnBannerScrollListener);
+
+
+      var images = document.querySelectorAll('.course-card-container__course-image-div');
+      var scrollContainer = document.querySelector('.main-scroll-wrapper');
+      var isOperaExtreme = (navigator.userAgent.indexOf('Opera Mini/') > -1) && (navigator.userAgent.indexOf('Presto/') > -1);
+
+      var options = {
+        root: scrollContainer,
+        rootMargin: '0px 0px 100px 0px',
+      };
+
+      if (isOperaExtreme) {
+        document.getElementById('operaModal').style.display = 'block';
+      }
+
+      if (urlParams.error && urlParams.error === '1379') {
+        var ErrorModal = document.getElementById('errorModalRoot');
+        ErrorModal.style.display = 'block';
+        LogOut();
+      }
+
+      // Feature detect intersection observer
+      if (window.IntersectionObserver) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              var webPimg = entry.target.querySelector('.webpSource');
+              var imageSource = entry.target.querySelector('.imageSource');
+              if (webPimg) {
+                webPimg.srcset = webPimg.dataset.srcset;
+              }
+
+              if (imageSource) {
+                imageSource.src = imageSource.dataset.src;
+              }
+            }
+          });
+        }, options);
+
+        images.forEach(function (image) {
+          observer.observe(image);
+        });
+      } else {
+        images.forEach(function (image) {
+          var webPimg = image.querySelector('.webpSource');
+          var imageSource = image.querySelector('.imageSource');
+
+          if (webPimg) {
+            webPimg.srcset = webPimg.dataset.srcset;
+          }
+
+          if (imageSource) {
+            imageSource.src = imageSource.dataset.src;
+          }
+        });
+      }
+
+      let urlSearchParams = new URLSearchParams(window.location.search);
+      if (window.location.href != window.location.origin + "/" && !urlSearchParams.has("source")) {
+        let truncatedURLForRedirection = encodeURIComponent(window.location.href.substring(window.location.origin.indexOf(window.location.origin) + window.location.origin.length + 1));
+
+        let ErrorModal = document.getElementById('redirectionModalRoot');
+        ErrorModal.style.display = 'block';
+
+        setTimeout(() => {
+          window.location.href = "/home/defaultsignin?whr=uri%3aB2C&amp;referrer=basedomain" + "&" + "truncatedURLForRedirection=" + truncatedURLForRedirection;
+        }, 5000);
+      }
+    }
+
+    var isAppInsightEnabled = ('False' === "False") ? true : false;
+    var appInsights = isAppInsightEnabled && (window.appInsights || function (config) {
+      function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } } var t = { config: config }, u = document, e = window, o = "script", s = u.createElement(o), i, f; for (s.src = config.url || "//az416426.vo.msecnd.net/scripts/a/ai.0.js", u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ["Event", "Exception", "Metric", "PageView", "Trace"]; i.length;)r("track" + i.pop()); return r("setAuthenticatedUserContext"), r("clearAuthenticatedUserContext"), config.disableExceptionTracking || (i = "onerror", r("_" + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t["_" + i](config, r, u, e, o), s }), t
+    }({
+      //YOUR INSTRUMENTATION KEY HERE
+      instrumentationKey: "ba36e7c9-87d7-4156-9009-f83b85cc30db"
+    }));
+
+    // add app insights singleton on the window object
+    window.appInsights = appInsights;
+
+    if (appInsights) {
+      appInsights.trackPageView();
+    }
+  </script>
+  <script type="text/javascript" src="Content/js/change-tabindex.js"></script>
+  <script type="text/javascript">
+    var defaultCourseImagesize = JSON.parse(JSON.stringify({ "default": 0, "compressed": 640, "webp": 640 }));
+    var langDict = { "English (United States)": "en-US", "العربية (المملكة العربية السعودية)": "ar-SA", "Français (France)": "fr-FR", "हिन्दी (भारत)": "hi-IN", "Lietuvių (Lietuva)": "lt-LT", "Melayu (Malaysia)": "ms-MY", "Español (España, alfabetización internacional)": "es-ES", "తెలుగు (భారతదేశం)": "te-IN", "Tetum": "tt-TT", "Tiếng Việt (Việt Nam)": "vi-VN", "Српски (Србија и Црна Гора (Бивша))": "sr-Cyrl-CS", "У​країнська (Україна)": "uk-UA", "Shqip (Shqipëri)": "sq-AL", "Soomaali (Soomaaliya)": "so-SO", "Т​оҷикӣ (Тоҷикистон)": "tg-Cyrl-TJ", "Português (Brasil)": "pt-BR", "ລາວ (ລາວ)": "lo-LA", "کوردیی ناوەڕاست (عێراق)": "ku-Arab-IQ", "ଓଡ଼ିଆ (ଭାରତ)": "or-IN", "ไทย (ไทย)": "th-TH", "বাংলা (ভারত)": "bn-IN", "Suomi (Suomi)": "fi-FI", "Svenska (Sverige)": "sv-SE", "中文(中国)": "zh-CN", "中文(台灣)": "zh-TW", "Nederlands (Nederland)": "nl-NL", "Kinyarwanda (U Rwanda)": "rw-RW", "Indonesia (Indonesia)": "id-ID", "Filipino (Pilipinas)": "fil-PH", "ខ្មែរ (កម្ពុជា)": "km-KH", "​русский (Россия)": "ru-RU", "日本語 (日本)": "ja-JP", "​o‘zbek (Oʻzbekiston)": "uz-Latn-UZ", "Srpski (Crna Gora)": "sr-Latn-ME", "Srpski (Bosna i Hercegovina)": "sr-Latn-BA", "​Cрпски (Црна Гора)": "sr-Cyrl-ME", "မြန်မာ (မြန်မာ)": "my-MM", "Italiano (Italia)": "it-IT", "Afrikaans (Suid-Afrika)": "af-ZA", "አማርኛ (ኢትዮጵያ)": "am-ET", "עברית (ישראל)": "he-IL", "Deutsch (Deutschland)": "de-DE", "தமிழ் (இந்தியா)": "ta-IN", "Polski (Polska)": "pl-PL", "​қазақ тілі (Қазақстан)": "kk-KZ", "​magyar (Magyarország)": "hu-HU", "​кыргызча (Кыргызстан)": "ky-KG", "​български (България)": "bg-BG", "اُردو (پاکستان)": "ur-PK", "​rumantsch (Svizra)": "rm-CH", "​bosanski (Bosna i Hercegovina)": "bs-Latn-BA", "​română (România)": "ro-RO", "​føroyskt (Føroyar)": "fo-FO", "​slovenčina (Slovensko)": "sk-SK", "​hrvatski (Hrvatska)": "hr-HR", "ਪੰਜਾਬੀ (ਭਾਰਤ)": "pa-IN", "ગુજરાતી (ભારત)": "gu-IN", "मराठी (भारत)": "mr-IN", "ಕನ್ನಡ (ಭಾರತ)": "kn-IN", "മലയാളം (ഇന്ത്യ)": "ml-IN", "অসমীয়া (ভাৰত)": "as-IN", "Cymraeg": "cy-GB" };
+    var signInURL = "/home/defaultsignin?whr=uri%3aB2C&amp;referrer=basedomain";
+    var idpType = "Email";
+    var phoneAuthSignout = "";
+
+    // Localized strings
+    var glb_lessons_text = "What will be covered?";
+    var glb_register = "Register";
+    var glb_cancel = "Cancel";
+  </script>
+  <script type="module">
+    // returns whether device is mac or not
+    function isAppleDevice() {
+      return (/(Mac|iPhone|iPod|iPad)/i.test(navigator.userAgent));
+    }
+
+    import { Workbox } from '/Content/js/workbox-window.prod.js';
+
+    if ('serviceWorker' in navigator && !isAppleDevice()) {
+      const swRegistration = new Workbox('./service-worker.js.gz');
+      swRegistration.addEventListener('waiting', () => {
+        swRegistration.addEventListener('controlling', () => {
+          window.location.reload();
+        });
+
+        swRegistration.messageSkipWaiting();
+      });
+
+      swRegistration.register();
+    }
+  </script>
+</body>
+
+</html>
